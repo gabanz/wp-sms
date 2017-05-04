@@ -1,0 +1,5 @@
+{
+    "require": {
+        "twizo/lib-api-php": "^0.2.0"
+    }
+}

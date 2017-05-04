@@ -18,6 +18,9 @@ class WP_SMS_Gateway
 			'' => array(
 				'default' => __('Please select your gateway', 'wp-sms'),
 			),
+			'suggestion' => array(
+				'twizo' => 'twizo.com',
+			),
 			'global' => array(
 				'fortytwo' => 'fortytwo.com',
 				'smsglobal' => 'smsglobal.com',
