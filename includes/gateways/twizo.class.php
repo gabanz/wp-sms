@@ -77,7 +77,7 @@ class twizo extends WP_SMS
 		if (!$this->username && !$this->password) {
 			return new WP_Error('account-credit', __('Username/Password does not set for this gateway', 'wp-sms'));
 		}
-		
+
 		if (!function_exists('curl_version')) {
 			return new WP_Error('required-function', __('CURL extension not found in your server. please enable curl extension.', 'wp-sms'));
 		}
