@@ -47,28 +47,6 @@ class twizo extends WP_SMS
 		 * @param string $this ->msg text message.
 		 */
 		$this->msg = apply_filters('wp_sms_msg', $this->msg);
-
-		try {
-			$twizo = Twizo\Api\Twizo::getInstance($this->has_key, 'api-asia-01.twizo.com');
-			$sms = $twizo->createSms($this->msg, $this->to[0], $this->from);
-
-			$sms->setResultType($sms::RESULT_TYPE_POLL);
-			$result = $sms->send();
-
-			$this->InsertToDB($this->from, $this->msg, $this->to);
-
-			/**
-			 * Run hook after send sms.
-			 *
-			 * @since 2.4
-			 * @param string $result result output.
-			 */
-			do_action('wp_sms_send', $result);
-
-			return $result;
-		} catch (Twizo\Api\Exceptio $e) {
-			return new WP_Error('send-sms', $e->getMessage());
-		}
 	}
 
 	public function GetCredit()
