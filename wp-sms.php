@@ -178,7 +178,6 @@ class WP_SMS_Plugin
 	public function includes()
 	{
 		$files = array(
-			'vendor/autoload',
 			'includes/class-wp-sms-gateway',
 			'includes/class-wp-sms-settings',
 			'includes/class-wp-sms-settings-pro',
